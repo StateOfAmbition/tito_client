@@ -16,11 +16,11 @@ module Tito
     def ClassMethods
       
       def find(event_slug, id)
-        Tito::Client.http.get([event_slug, resource_type, id].join("/"))
+        self.client.get([event_slug, resource_type, id].join("/"))
       end
       
       def all_for(event_slug)
-        Tito::Client.http.get([event_slug, resource_type].join("/"))
+        self.client.get([event_slug, resource_type].join("/"))
       end
       
     end

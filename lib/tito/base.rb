@@ -12,11 +12,11 @@ module Tito
     end
     
     def create
-      Tito::Client.http.post(endpoint, params)
+      self.client.post(endpoint, params)
     end
     
     def update
-      Tito::Client.http.patch("#{endpoint}/#{id}", params)
+      self.client.patch("#{endpoint}/#{id}", params)
     end
     
     def params
@@ -29,12 +29,16 @@ module Tito
     
     class << self
       
+      def client
+        @@client ||= Tito::Client.http
+      end
+      
       def find(id)
-        Tito::Client.http.get("#{resource_type}/#{id}")
+        client.get("#{resource_type}/#{id}")
       end
       
       def all
-        Tito::Client.http.get(resource_type)
+        client.get(resource_type)
       end
       
       def resource_type
