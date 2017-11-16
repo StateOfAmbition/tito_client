@@ -1,11 +1,7 @@
 module Tito
   class Release < Tito::Base
     include Eventable, DashboardEndpoint
-    
-    def endpoint
-      "#{event_ticket.event.tito_id}/releases"
-    end
-    
+
     class << self
       def attributes
         [:title, :description, :enable_super_combo_summary, :has_success_message, :max_tickets_per_person,
