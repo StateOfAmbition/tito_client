@@ -1,12 +1,12 @@
 module Tito
-  class Activity < Tito::Resource
+  class Link < Tito::Resource
     include Eventable, DashboardEndpoint
     
     class << self
+
       def properties
-        [:name, :capacity, :private, :release_ids]
+        [:url, :link_text]
       end
     end
-    
   end
 end

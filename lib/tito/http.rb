@@ -1,6 +1,6 @@
 module Tito
   class Http < ::Api::Client::Base
-    attr_accessor :host_name, :api_version, :account
+    attr_accessor :host_name, :base_endpoint, :api_version, :account
     
     def base_endpoint
       @base_endpoint ||= "#{host_name}/v#{api_version}/#{account}"

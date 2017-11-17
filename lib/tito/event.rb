@@ -1,8 +1,8 @@
 module Tito
-  class Event < Tito::Base
+  class Event < Tito::Resource
 
     def endpoint
-      id ? '' : 'events'
+      id ? id : 'events'
     end
     
     class << self
@@ -15,7 +15,7 @@ module Tito
         client.get(resource_type).resources
       end
       
-      def attributes
+      def properties
         [:title, :description, :slug, :currency, :start_date, :end_date, :location, :test_mode, :public, :live, :logo_url, :banner_url]
       end
     end
