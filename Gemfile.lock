@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:StateOfAmbition/api_client.git
-  revision: ae901ebacc0536c487703fce46d1fd9b45fe1382
+  revision: e7b91047441c898afa82e0247b2478acc1d92d10
   specs:
-    api_client (0.0.1)
+    api_client (0.0.2)
       rest-client (~> 2.0.2)
 
 PATH
