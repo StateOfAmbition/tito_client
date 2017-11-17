@@ -29,24 +29,22 @@ module Tito
     
     class << self
       
+      attr_reader :client
+      
       def client
-        @@client ||= Tito::Client.http
+        @client ||= Tito::Client.http
       end
       
-      def find(id)
-        client.get("#{resource_type}/#{id}")
-      end
-      
-      def all
-        client.get(resource_type)
+      def resource_name
+        @resouce_name ||= self.name.split('::').last.
+        gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
+        gsub(/([a-z\d])([A-Z])/,'\1_\2').
+        tr("-", "_").
+        downcase
       end
       
       def resource_type
-        self.name.split('::').last.
-      gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
-      gsub(/([a-z\d])([A-Z])/,'\1_\2').
-      tr("-", "_").
-      downcase + 's'
+         resource_name + 's'
       end
       
     end

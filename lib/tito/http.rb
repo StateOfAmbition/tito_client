@@ -3,7 +3,7 @@ module Tito
     attr_accessor :host_name, :api_version, :account
     
     def base_endpoint
-      @base_endpoint ||= "#{host_name}/v#{api_version}/#{account}/"
+      @base_endpoint ||= "#{host_name}/v#{api_version}/#{account}"
     end
     
     private 
