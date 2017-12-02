@@ -1,9 +1,9 @@
 module Tito
   module Setting
     class Basics < Tito::Setting::Base
-      
+
       class << self
-        def properties
+        def attributes
           [:email_address, :slug, :domain, :private, :meta_robots]
         end
       end

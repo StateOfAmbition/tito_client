@@ -1,18 +1,18 @@
 module Tito
   class EventSetting < Tito::Resource
     include Eventable
-    
+
     def theme
       !@theme.nil? && self.theme_set.include?(@theme) ? @theme : theme_set.first
     end
-    
+
     class << self
-      
+
       def theme_set
         ['mcdonagh', 'classic']
       end
-      
-      def properties
+
+      def attributes
         [:additional_info, :address, :after_registration_closed_url, :after_registration_complete_url, :city, :country,
          :custom_background_color, :custom_complete_ticket_label, :custom_email_signature, :custom_registration_confirmation_subject,
          :custom_registration_unavailable_message, :custom_ticket_added_subject, :custom_ticket_gifted_subject, :custom_ticket_message,
@@ -28,6 +28,6 @@ module Tito
         ]
       end
     end
-    
+
   end
-end 
+end

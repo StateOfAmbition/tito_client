@@ -1,12 +1,12 @@
 module Tito
   class Question < Tito::Resource
     include Eventable
-    
+
     class << self
-      def properties
+      def attributes
         [:title, :description, :required, :options, :options_free_text_field, :include_free_text_field, :field_type]
       end
     end
-    
+
   end
 end
