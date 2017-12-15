@@ -16,7 +16,7 @@ module Tito
       end
 
       def attributes
-        [:title, :description, :slug, :currency, :start_date, :end_date, :location, :test_mode, :public, :live, :logo_url, :banner_url]
+        [:title, :description, :slug, :currency, :start_date, :end_date, :location, :test_mode, :private, :live, :logo_url, :banner_url]
       end
     end
   end
