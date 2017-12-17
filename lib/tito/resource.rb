@@ -14,6 +14,10 @@ module Tito
       self.class.client.patch(endpoint, params)
     end
 
+    def destroy
+      self.class.client.delete(endpoint)
+    end
+
     private
 
       def persisted?
