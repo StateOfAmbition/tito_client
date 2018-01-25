@@ -2,7 +2,7 @@ module Tito
   class Event < Tito::Resource
 
     def endpoint
-      id ? id : ''
+      id ? id : 'events'
     end
 
     class << self
