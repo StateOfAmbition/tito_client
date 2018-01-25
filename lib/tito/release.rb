@@ -4,13 +4,13 @@ module Tito
 
     class << self
 
-      def void(event_slug, id)
+      def void_tickets(event_slug, id)
         self.find(event_slug, id, ["tickets"]).included.each do |t|
           Tito::Ticket.void(event_slug, t.id) unless t.state == "void"
         end
       end
 
-      def un_void(event_slug, id)
+      def un_void_tickets(event_slug, id)
         self.find(event_slug, id, ["tickets"]).included.each do |t|
           Tito::Ticket.un_void(event_slug, t.id) if t.state == "void"
         end
