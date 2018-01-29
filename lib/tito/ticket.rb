@@ -5,7 +5,7 @@ module Tito
     class << self
 
       def void(event_slug, id, resell = true)
-        self.client.post([event_slug, resource_type, id, "voids"].join("/"), {resell: resell})
+        self.client.post([event_slug, resource_type, id, "voids"].join("/"), {void: {resell: resell}})
       end
 
       def un_void(event_slug, id)
