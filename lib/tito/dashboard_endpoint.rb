@@ -12,7 +12,7 @@ module Tito
     module ClassMethods
 
       def client
-        @@client ||= Tito::Http.new({host_name: 'https://dashboard.tito.io', base_endpoint: "https://dashboard.tito.io/#{Tito::Client.config.account}/"})
+        @@client ||= Tito::Http.new({hostname: 'https://dashboard.tito.io', base_endpoint: "https://dashboard.tito.io/#{Tito::Client.config.account}/"})
       end
 
     end

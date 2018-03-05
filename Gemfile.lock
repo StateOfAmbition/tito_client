@@ -1,14 +1,14 @@
 GIT
   remote: git@github.com:StateOfAmbition/api_client.git
-  revision: 28601557ab3f8f62ade96b7d277e8a2c6af3c7b1
+  revision: 15f5ce0c67f19efeafabf126352adb7e2e7b4846
   specs:
-    api_client (0.2.0)
+    api_client (0.2.1)
       rest-client (~> 2.0.2)
 
 PATH
   remote: .
   specs:
-    tito_client (0.0.7)
+    tito_client (0.0.6)
 
 GEM
   remote: https://rubygems.org/
@@ -27,7 +27,7 @@ GEM
       netrc (~> 0.8)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.4)
+    unf_ext (0.0.7.5)
 
 PLATFORMS
   ruby
