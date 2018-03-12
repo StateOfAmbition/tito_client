@@ -5,7 +5,7 @@ require 'tito/http'
 
 require_relative './tito/configuration.rb'
 require_relative './tito/base.rb'
-require_relative './tito/resource.rb'
+require_relative './tito/entity.rb'
 require_relative './tito/activity.rb'
 require_relative './tito/event.rb'
 require_relative './tito/question.rb'
