@@ -1,5 +1,5 @@
 module Tito
-  class WebhookEndpoint < Tito::Resource
+  class WebhookEndpoint < Tito::Entity
     include Eventable, DashboardEndpoint
 
     class << self

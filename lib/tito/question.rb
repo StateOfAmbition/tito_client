@@ -1,5 +1,5 @@
 module Tito
-  class Question < Tito::Resource
+  class Question < Tito::Entity
     include Eventable
 
     class << self

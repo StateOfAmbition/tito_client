@@ -1,5 +1,5 @@
 module Tito
-  class Event < Tito::Resource
+  class Event < Tito::Entity
 
     def endpoint
       id ? id : 'events'

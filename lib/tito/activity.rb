@@ -1,5 +1,5 @@
 module Tito
-  class Activity < Tito::Resource
+  class Activity < Tito::Entity
     include Eventable, DashboardEndpoint
 
     class << self

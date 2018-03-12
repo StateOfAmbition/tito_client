@@ -1,5 +1,5 @@
 module Tito
-  class Refund < Tito::Resource
+  class Refund < Tito::Entity
     include Eventable, DashboardEndpoint
 
     def resource_prefix_id

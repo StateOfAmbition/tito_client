@@ -1,5 +1,5 @@
 module Tito
-  class EventSetting < Tito::Resource
+  class EventSetting < Tito::Entity
     include Eventable
 
     def theme

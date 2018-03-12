@@ -1,5 +1,5 @@
 module Tito
-  class Registration < Tito::Resource
+  class Registration < Tito::Entity
     include Eventable, DashboardEndpoint
 
     def void

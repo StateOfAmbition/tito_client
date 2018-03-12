@@ -1,5 +1,5 @@
 module Tito
-  class Resource < Tito::Base
+  class Entity < Tito::Base
 
     def sync
       response = persisted? ? update : create

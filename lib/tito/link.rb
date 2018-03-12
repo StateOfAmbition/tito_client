@@ -1,5 +1,5 @@
 module Tito
-  class Link < Tito::Resource
+  class Link < Tito::Entity
     include Eventable, DashboardEndpoint
 
     class << self
