@@ -12,7 +12,7 @@ module Tito
         Tito::Client.api_key
       end
 
-      def authorization_params
+      def header_params
         {accept: 'application/vnd.api+json', Authorization: "Token token=#{access_token}"}
       end
 
