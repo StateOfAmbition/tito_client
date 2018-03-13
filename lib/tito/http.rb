@@ -6,6 +6,10 @@ module Tito
       @base_endpoint ||= "#{hostname}/v#{api_version}/#{account}"
     end
 
+    def log_response?
+      Tito::Client.config.logger_active
+    end
+
     private
 
       def generate_token

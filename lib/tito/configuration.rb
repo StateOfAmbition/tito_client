@@ -1,5 +1,5 @@
 module Tito
-  class Configuration
+  class Configuration < ::Api::Client::Configuration
     attr_accessor :hostname, :access_token, :api_version, :account
 
     def hostname
