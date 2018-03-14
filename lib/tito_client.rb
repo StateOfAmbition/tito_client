@@ -40,6 +40,12 @@ module Tito
       yield config
     end
 
+    def self.logger
+      @logger ||= logger = Logger.new(STDOUT).tap do |l|
+        l.level = Logger::INFO
+      end
+    end
+
     def self.method_missing(name, *args)
       config.send(name) if config.respond_to?(name)
     end
