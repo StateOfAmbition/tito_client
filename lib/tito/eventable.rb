@@ -10,16 +10,22 @@ module Tito
         raise InvalidEventableResource unless attributes.has_key?(:event_slug)
         attributes[:event_slug]
       end
+
+      def get(includes = [])
+        return nil unless id
+        self.class.client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes))
+      end
     end
 
     module ClassMethods
 
       def find(event_slug, id, includes = [])
-        self.client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes))
+        client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes))
       end
+      alias_method :get, :find
 
       def all_for(event_slug, includes = [])
-        self.client.get(path_with_includes([event_slug, resource_type].join("/"), includes))
+        client.get(path_with_includes([event_slug, resource_type].join("/"), includes))
       end
 
       private
