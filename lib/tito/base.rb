@@ -7,9 +7,7 @@ module Tito
     end
 
     def method_missing(method, *args, &block)
-      dasherized_method = method.replace("_","-")
       attributes.has_key?(method) ? attributes[method] : nil
-      attributes.has_key?(dasherized_method) ? attributes[dasherized_method] : super
     end
 
     def params
