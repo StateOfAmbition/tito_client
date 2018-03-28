@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    tito_client (0.0.6)
+    tito_client (0.1.8)
 
 GEM
   remote: https://rubygems.org/
