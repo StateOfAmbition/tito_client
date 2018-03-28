@@ -13,7 +13,7 @@ module Tito
 
       def get(includes = [])
         return nil unless id
-        self.class.client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes)).resource
+        self.class.client.get(self.class.path_with_includes([event_slug, self.class.resource_type, id].join("/"), includes)).resource
       end
     end
 
@@ -28,10 +28,11 @@ module Tito
         client.get(path_with_includes([event_slug, resource_type].join("/"), includes)).resources
       end
 
-      private
-        def path_with_includes(path, includes)
-          includes.empty? ? path : [path, includes.join(',')].join('?include=')
-        end
+      def path_with_includes(path, includes)
+        includes.empty? ? path : [path, includes.join(',')].join('?include=')
+      end
+
+
 
     end
 
