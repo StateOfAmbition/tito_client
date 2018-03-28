@@ -13,19 +13,19 @@ module Tito
 
       def get(includes = [])
         return nil unless id
-        self.class.client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes))
+        self.class.client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes)).resource
       end
     end
 
     module ClassMethods
 
       def find(event_slug, id, includes = [])
-        client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes))
+        client.get(path_with_includes([event_slug, resource_type, id].join("/"), includes)).resource
       end
       alias_method :get, :find
 
       def all_for(event_slug, includes = [])
-        client.get(path_with_includes([event_slug, resource_type].join("/"), includes))
+        client.get(path_with_includes([event_slug, resource_type].join("/"), includes)).resources
       end
 
       private
