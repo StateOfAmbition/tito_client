@@ -13,15 +13,6 @@ module Tito
 
     class << self
 
-      def find(event_slug, registration_id, id, includes = [])
-        client.get(path_with_includes([event_slug, resource_prefix, registration_id, resource_type, id].join("/"), includes)).resource
-      end
-      alias_method :get, :find
-
-      def all_for(event_slug, registration_id, includes = [])
-        client.get(path_with_includes([event_slug, resource_prefix, registration_id, resource_type].join("/"), includes)).resources
-      end
-
       def resource_prefix
         "registrations"
       end
