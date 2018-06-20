@@ -22,7 +22,7 @@ module Tito
       end
 
       def destroy(id)
-        client.destroy(id)
+        client.delete(id)
       end
 
       def attributes
