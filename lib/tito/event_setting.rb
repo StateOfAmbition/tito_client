@@ -3,7 +3,7 @@ module Tito
     include Eventable
 
     def theme
-      !@theme.nil? && self.theme_set.include?(@theme) ? @theme : theme_set.first
+      !@theme.nil? && self.theme_set.include?(@theme) ? @theme : self.class.theme_set.first
     end
 
     class << self
