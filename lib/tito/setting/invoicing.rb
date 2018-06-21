@@ -5,7 +5,7 @@ module Tito
       class << self
 
         def resource_name
-          'register_form'
+          'invoicing'
         end
 
         def attributes
