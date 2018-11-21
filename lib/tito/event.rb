@@ -12,10 +12,14 @@ module Tito
 
     class << self
 
-      def find(id)
-        client.get(id).resource
+      def find(slug, includes = [])
+        client.get(path_with_includes(slug, includes)).resource
       end
       alias_method :get, :find
+
+      def path_with_includes(slug, includes)
+        includes.empty? ? slug : [slug, includes.join(',')].join('?include=')
+      end
 
       def all
         client.get(resource_type).resources
@@ -26,7 +30,7 @@ module Tito
       end
 
       def attributes
-        [:title, :description, :slug, :currency, :start_date, :end_date, :location, :test_mode, :private, :live, :logo_url, :banner_url]
+        [:title, :description, :slug, :currency, :credit_card_payment_option_id, :start_date, :end_date, :location, :test_mode, :private, :live, :logo_url, :banner_url]
       end
     end
   end
