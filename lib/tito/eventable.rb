@@ -24,7 +24,11 @@ module Tito
       end
       alias_method :get, :find
 
-      def all_for(event_slug, includes = [])
+      def all_for(event_slug)
+        client.get([event_slug, resource_type].join("/")).resources
+      end
+
+      def all_for_with_includes(event_slug, includes = [])
         response = client.get(path_with_includes([event_slug, resource_type].join("/"), includes))
         {resources: response.resources, includes: response.included}
       end
