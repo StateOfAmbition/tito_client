@@ -9,7 +9,7 @@ module Tito
 
       private
         def generate_params
-          {event: {event_attributes_key => parameterize_attributes}}
+          {event: parameterize_attributes}
         end
 
         def parameterize_attributes
