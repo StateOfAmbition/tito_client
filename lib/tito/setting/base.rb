@@ -16,10 +16,6 @@ module Tito
           self.class.attributes.inject({}) {|params, property| params[property] = send(property); params}.delete_if { |k, v| v.nil? }
         end
 
-        def event_attributes_key
-          :event_setting_attributes
-        end
-
       class << self
 
         def resource_prefix
