@@ -9,7 +9,7 @@ module Tito
     class << self
 
       def void(event_slug, id)
-        self.client.post([event_slug, resource_type, id, "cancellation"].join("/"), {cancel: true})
+        self.client.post([event_slug, resource_type, id, "cancellation"].join("/"))
       end
 
       def un_void(event_slug, id)
