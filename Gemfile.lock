@@ -1,9 +1,9 @@
 GIT
   remote: git@github.com:StateOfAmbition/api_client.git
-  revision: 15f5ce0c67f19efeafabf126352adb7e2e7b4846
+  revision: af9d1ff35115c7748ff0d50ac468e6795a8c680e
   specs:
-    api_client (0.2.1)
-      rest-client (~> 2.0.2)
+    api_client (0.2.9)
+      rest-client (>= 2.0.2, < 2.2.0)
 
 PATH
   remote: .
@@ -13,21 +13,23 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    domain_name (0.5.20170404)
+    domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    mime-types (3.1)
+    mime-types (3.3)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2016.0521)
+    mime-types-data (3.2019.1009)
     netrc (0.11.0)
-    rest-client (2.0.2)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7.5)
+    unf_ext (0.0.7.6)
 
 PLATFORMS
   ruby
