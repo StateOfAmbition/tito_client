@@ -25,7 +25,7 @@ module Tito
       end
 
       def generate_params
-        {data: {type: self.class.resource_type, attributes: parameterize_attributes}}
+        {self.class.resource_name => parameterize_attributes}
       end
 
       def parameterize_attributes

@@ -1,7 +1,8 @@
 require "api_client"
 require 'tito/eventable.rb'
-require 'tito/http'
+require 'tito/api/http.rb'
 
+require_relative './tito/api/resource.rb'
 require_relative './tito/configuration.rb'
 require_relative './tito/base.rb'
 require_relative './tito/entity.rb'
@@ -31,7 +32,7 @@ module Tito
   module Client
 
     def self.http
-      @http ||= Tito::Http.new
+      @http ||= Tito::Api::Http.new
     end
 
     def self.config
