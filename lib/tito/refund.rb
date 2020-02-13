@@ -1,6 +1,6 @@
 module Tito
   class Refund < Tito::Entity
-    include Eventable, DashboardEndpoint
+    include Eventable
 
     def resource_prefix_id
       raise InvalidRefundResource unless attributes.has_key?(:registration_id)

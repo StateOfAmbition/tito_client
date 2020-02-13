@@ -1,7 +1,6 @@
 module Tito
   class Confirmation < Tito::Entity
-    include Eventable, DashboardEndpoint
-
+    include Eventable
     def resource_prefix_id
       raise InvalidConfirmationResource unless attributes.has_key?(:registration_id)
       registration_id

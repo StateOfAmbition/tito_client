@@ -1,6 +1,6 @@
 module Tito
   class Ticket < Tito::Entity
-    include Eventable, DashboardEndpoint
+    include Eventable
 
     class << self
 

@@ -1,6 +1,6 @@
 module Tito
   class Registration < Tito::Entity
-    include Eventable, DashboardEndpoint
+    include Eventable
 
     def void
       self.class.client.post([event_slug, self.class.resource_type, id, "cancellation"].join("/"))

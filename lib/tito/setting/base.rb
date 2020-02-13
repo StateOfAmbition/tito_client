@@ -1,7 +1,7 @@
 module Tito
   module Setting
     class Base < Tito::Base
-      include Eventable, DashboardEndpoint
+      include Eventable
 
       def update
         self.class.client.patch("#{endpoint}", params)

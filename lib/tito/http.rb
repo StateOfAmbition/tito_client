@@ -11,13 +11,25 @@ module Tito
     end
 
     private
+      def parse(response)
+        begin
+          # puts "[Tito::http#parse] #{response.body}"
+          body = JSON.parse(response.body)
+          puts "[Tito::http#parse] #{body.keys.first}"
+          Api::Client::Response.new(response.code, response.headers, Api::Client::Resource.parse(body, body.keys.first)).tap do |r|
+            Api::Client.logger.info "[API::Client] Response: status #{r.status} data: #{r.data.inspect}" if log_response?
+          end
+        rescue JSON::ParserError => e
+          Response.new(response.code, response.headers, response.body)
+        end
+      end
 
       def generate_token
         Tito::Client.api_key
       end
 
       def header_params
-        {accept: 'application/vnd.api+json', Authorization: "Token token=#{access_token}"}
+        {accept: 'application/json', Authorization: "Token token=#{access_token}"}
       end
 
       def default_config

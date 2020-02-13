@@ -1,6 +1,5 @@
 require "api_client"
 require 'tito/eventable.rb'
-require 'tito/dashboard_endpoint.rb'
 require 'tito/http'
 
 require_relative './tito/configuration.rb'

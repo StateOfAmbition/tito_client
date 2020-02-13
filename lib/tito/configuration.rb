@@ -7,7 +7,7 @@ module Tito
     end
 
     def api_version
-      @api_version || 2
+      @api_version || 3
     end
   end
 end

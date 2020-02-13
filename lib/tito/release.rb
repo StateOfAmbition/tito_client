@@ -1,6 +1,6 @@
 module Tito
   class Release < Tito::Entity
-    include Eventable, DashboardEndpoint
+    include Eventable
 
     class << self
 

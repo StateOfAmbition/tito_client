@@ -1,6 +1,6 @@
 module Tito
   class DiscountCode < Tito::Entity
-    include Eventable, DashboardEndpoint
+    include Eventable
 
     class << self
 
