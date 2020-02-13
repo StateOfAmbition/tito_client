@@ -29,7 +29,7 @@ module Tito
       end
 
       def parameterize_attributes
-        self.class.attributes.inject({}) {|params, property| params[property.to_s.gsub('_','-')] = send(property); params}.delete_if { |k, v| v.nil? }
+        self.class.attributes.inject({}) {|params, property| params[property] = send(property); params}.delete_if { |k, v| v.nil? }
       end
 
   end
