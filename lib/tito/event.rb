@@ -2,12 +2,12 @@ module Tito
   class Event < Tito::Entity
 
     def endpoint
-      id ? id : 'events'
+      slug ? slug : 'events'
     end
 
     def get(includes = [])
-      return nil unless id
-      self.class.client.get(id).resource
+      return nil unless slug
+      self.class.client.get(slug).resource
     end
 
     class << self
