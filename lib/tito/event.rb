@@ -2,7 +2,7 @@ module Tito
   class Event < Tito::Entity
 
     def endpoint
-      slug ? slug : 'events'
+      id ? slug : 'events'
     end
 
     def get(includes = [])
