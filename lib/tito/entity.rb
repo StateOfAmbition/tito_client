@@ -1,6 +1,10 @@
 module Tito
   class Entity < Tito::Base
 
+    def endpoint
+      [self.class.resource_type, id].reject{|a|a.nil? || a.to_s.empty?}.join("/")
+    end
+
     def sync
       response = persisted? ? update : create
       block_given? ? (yield response) : response
@@ -21,7 +25,7 @@ module Tito
     class << self
 
       def find(id, includes = [])
-        client.get(path_with_includes(id, includes)).resource
+        client.get(path_with_includes([resource_type, id].join("/"), includes)).resource
       end
       alias_method :get, :find
 

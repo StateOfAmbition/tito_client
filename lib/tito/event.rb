@@ -11,6 +11,12 @@ module Tito
     end
 
     class << self
+
+      def find(slug, includes = [])
+        client.get(path_with_includes(slug, includes)).resource
+      end
+      alias_method :get, :find
+
       def attributes
         [:title, :description, :slug, :currency, :credit_card_payment_option_id,
           :start_date, :end_date, :location, :test_mode, :private, :live,
