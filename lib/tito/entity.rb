@@ -18,6 +18,26 @@ module Tito
       self.class.client.delete(endpoint)
     end
 
+    class << self
+
+      def find(id, includes = [])
+        client.get(path_with_includes(id, includes)).resource
+      end
+      alias_method :get, :find
+
+      def path_with_includes(id, includes)
+        includes.empty? ? slug : [id, includes.join(',')].join('?include=')
+      end
+
+      def all
+        client.get(resource_type).resources
+      end
+
+      def destroy(id)
+        client.delete(id)
+      end
+    end
+
     private
 
       def persisted?
