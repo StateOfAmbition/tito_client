@@ -26,7 +26,7 @@ module Tito
       alias_method :get, :find
 
       def path_with_includes(id, includes)
-        includes.empty? ? slug : [id, includes.join(',')].join('?include=')
+        includes.empty? ? id : [id, includes.join(',')].join('?include=')
       end
 
       def all
