@@ -15,6 +15,7 @@ require_relative './tito/question.rb'
 require_relative './tito/refund.rb'
 require_relative './tito/registration.rb'
 require_relative './tito/release.rb'
+require_relative './tito/team.rb'
 require_relative './tito/ticket.rb'
 require_relative './tito/webhook_endpoint.rb'
 
