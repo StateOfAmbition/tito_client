@@ -4,7 +4,7 @@ module Tito
       attr_accessor :hostname, :base_endpoint, :api_version, :account
 
       def base_endpoint
-        @base_endpoint ||= "#{hostname}/v#{api_version}/#{account}"
+        @base_endpoint ||= "#{Tito::Client.base_endpoint}/#{account}"
       end
 
       def log_response?

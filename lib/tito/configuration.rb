@@ -1,6 +1,10 @@
 module Tito
   class Configuration < ::Api::Client::Configuration
-    attr_accessor :hostname, :access_token, :api_version, :account
+    attr_accessor :base_endpoint, :hostname, :access_token, :api_version, :account
+
+    def base_endpoint
+      @base_endpoint || "#{hostname}/#{api_version}"
+    end
 
     def hostname
       @hostname || "https://api.tito.io"
