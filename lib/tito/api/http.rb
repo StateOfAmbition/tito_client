@@ -29,6 +29,11 @@ module Tito
           Tito::Client.api_key
         end
 
+        def verify_ssl
+          false
+        end
+
+
         def header_params
           {accept: 'application/json', Authorization: "Token token=#{access_token}"}
         end
